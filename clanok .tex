@@ -32,7 +32,7 @@
 \maketitle
 
 \begin{abstract}
-\ Článok sa zaoberá modelom bankomatového softvéru.  Na začiatku stručne definuje čo je Unified Modeling Language, ktorý je na modelovanie použitý.  Následne pomocou vybraných digramov demonštruje model softvéru pre bankomat.  Použité diagramy sú sekvenčný diagram, diagram tried a diagram prípadov použitia. 
+\ Článok sa zaoberá modelom bankomatového softvéru.  Na začiatku stručne definuje čo je Unified Modeling Language, ktorý je na modelovanie použitý.  Následne pomocou vybraných diagramov demonštruje model softvéru pre bankomat.  Použité diagramy sú sekvenčný diagram, diagram tried a diagram prípadov použitia. 
 
 Kľúčové slová : modelovanie,  UML,  sekvenčný diagram, diagram tried, diagram prípadov použitia
 \end{abstract}
@@ -42,7 +42,7 @@ Kľúčové slová : modelovanie,  UML,  sekvenčný diagram, diagram tried, dia
 
 \section{Úvod}
 
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
+Bankomaty prešli za posledných 60 rokov veľkými zmenami. Od jednoduchý zariadení, ktoré vymieňali jednorazové poukážky za obálky s bankovkami sa stali zariadenia, ktoré požívane denne. Softvér bankomatu sa počas rokov stával čoraz zložitejším, a preto si jeho tvorba vyžaduje sofistikovaný model. 
 
 Základné informácie o grafickom jazyku, ktorý je použitý na modelovanie ako aj popis jeho diagramov sú v časti ~\ref{uml}.Príklady UML diagramov a ich vysvetlenie je v časti ~\ref{main}.  Záverečné poznatky a zhrnutie celého článku prináša časť ~\ref{zaver}.
 
@@ -103,29 +103,48 @@ Synchronizačný diagram\\
 V článku bude pre model bankomatového softvéru použitý sekvenčný diagram (zobrazuje interakcie medzi zákazníkom, bankomatom a bankou), diagram tried (obsahuje všetky triedy, ktoré bude softvér používať a vzťahy medzi nimi), a diagram prípadov použitia. 
 
 \newpage
-
 \section{Model bankomatového softvér} \label{main}
+
+
 
 \subsection{Sekvenčný diagram} \label{seq}
 
+\begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{seq.png}
+\caption{Sekvenčný diagram}
+\cite{PLP-Framework}
+\end{figure}
+
+
+\newpage
 
 \subsection{Diagram tried} \label{class}
 
+\begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{class.png}
+\caption{Diagram tried}
+\cite{PLP-Framework}
+\end{figure}
 
+
+\newpage
 \subsection{Diagram pípadov použitia } \label{use}
 
+\begin{figure}[h]
+\centering
 \includegraphics[scale=0.5]{use.png}
+\caption{Diagram prípadov použitia}
+\cite{PLP-Framework}
+\end{figure}
+
 
 \newpage
 
 
 \section{Iná časť} \label{ina}
 
-
-
-Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
 
 
 \section{Záver} \label{zaver} % prípadne iný variant názvu
