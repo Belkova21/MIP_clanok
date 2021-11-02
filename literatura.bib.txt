@@ -1,8 +1,17 @@
 % ....názov súboru je: literatura.bib
 
+
 % zdroj na webe
-@misc{PLP-Framework,
+@misc{Sample,
 	author = "DAV University",
 	title = "Sample of UML Diagrams for ATM System",
 	howpublished = "\url{https://www.davuniversity.org/images/files/study-material/UML-ATM.pdf}",
+}
+
+
+% zdroj na webe
+@misc{UML-Uvod,
+	author = "David Čápka",
+	title = "1. diel - Úvod do UML",
+	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-uvod-historie-vyznam-a-diagramy}",
 }
