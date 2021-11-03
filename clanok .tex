@@ -1,6 +1,6 @@
 % Metódy inžinierskej práce
 
-\documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass[10pt,slovak,a4paper]{article}
 
 \usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
@@ -34,7 +34,6 @@
 \begin{abstract}
 \ Článok sa zaoberá modelom bankomatového softvéru.  Na začiatku stručne definuje čo je Unified Modeling Language, ktorý je na modelovanie použitý.  Následne pomocou vybraných diagramov demonštruje model softvéru pre bankomat.  Použité diagramy sú sekvenčný diagram, diagram tried a diagram prípadov použitia. 
 
-Kľúčové slová : modelovanie,  UML,  sekvenčný diagram, diagram tried, diagram prípadov použitia
 \end{abstract}
 
 
@@ -43,17 +42,19 @@ Kľúčové slová : modelovanie,  UML,  sekvenčný diagram, diagram tried, dia
 \section{Úvod}
 
 Bankomaty prešli za posledných 60 rokov veľkými zmenami. Od jednoduchý zariadení, ktoré vymieňali jednorazové poukážky za obálky s bankovkami sa stali zariadenia, ktoré požívane denne. Softvér bankomatu sa počas rokov stával čoraz zložitejším, a preto si jeho tvorba vyžaduje sofistikovaný model. 
-
-Základné informácie o grafickom jazyku, ktorý je použitý na modelovanie ako aj popis jeho diagramov sú v časti ~\ref{uml}.Príklady UML diagramov a ich vysvetlenie je v časti ~\ref{main}.  Záverečné poznatky a zhrnutie celého článku prináša časť ~\ref{zaver}.
+\newline
+Základné informácie o grafickom jazyku, ktorý je použitý na modelovanie ako aj popis jeho diagramov sú v časti ~\ref{uml}.Príklady vybraných UML diagramov pre bankomatový softvér a ich vysvetlenie článok ponúka v časti ~\ref{main}.  Záverečné poznatky a zhrnutie celého článku prináša časť ~\ref{zaver}.
 
 
 \section{Unified Modeling Language (UML)} \label{uml}
-
-UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru. Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  \cite{UML-Uvod}
+(definícia UML je sformulovaná na základe článku \cite{UML-Uvod})\newline
+UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru. Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  
 
 \newpage
-\subsection{Typy diadramov} \label{typy}
-
+\Large 
+\textbf{Typy diagramov}
+\normalsize
+\newline
 UML v súčasnosti pozostáva zo 14 diagramov. Tie sú rozdelené do dvoch základných kategórií:  diagramy štruktúry (Structure diagrams) a diagramy správania (Behaviour Diagram).
 \newline
 
@@ -104,38 +105,40 @@ V článku bude pre model bankomatového softvéru použitý sekvenčný diagram
 
 \section{Model bankomatového softvér} \label{main}
 
+\subsection{Diagram pípadov použitia } \label{use}
 
-
-\subsection{Sekvenčný diagram} \label{seq}
-
+Diagram prípadov použitia je typ diagramu, ktorý zobrazuje vzťah medzi aktérmi a systémom a funkcie modelovaného systému. Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy, v ktorej sa nachádza popis práce. Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.      
+\newline
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{seq.png}
-\caption{Sekvenčný diagram\cite{Sample}}
+\includegraphics[scale=0.3]{use.png}
+\caption{Diagram prípadov použitia\cite{Sample}}
+\label{dpp}
 \end{figure}
 
 
 \newpage
 
 \subsection{Diagram tried} \label{class}
-
+V tejto podkapitole článok bližšie popíše obrátok ~\ref{dt}.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{class.png}
 \caption{Diagram tried\cite{Sample}}
-
+\label{dt}
 \end{figure}
 
 
 \newpage
-\subsection{Diagram pípadov použitia } \label{use}
 
+\subsection{Sekvenčný diagram} \label{seq}
+V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{use.png}
-\caption{Diagram prípadov použitia\cite{Sample}}
+\includegraphics[scale=0.3]{seq.png}
+\caption{Sekvenčný diagram\cite{Sample}}
+\label{sd}
 \end{figure}
-
 
 
 \section{Záver} \label{zaver} % prípadne iný variant názvu
