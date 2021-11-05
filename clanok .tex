@@ -107,7 +107,7 @@ V článku bude pre model bankomatového softvéru použitý sekvenčný diagram
 
 \subsection{Diagram pípadov použitia } \label{use}
 
-Diagram prípadov použitia je typ diagramu, ktorý zobrazuje vzťah medzi aktérmi a systémom a funkcie modelovaného systému. Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy, v ktorej sa nachádza popis práce. Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.      
+Diagram prípadov použitia je typ diagramu, ktorý zobrazuje vzťah medzi aktérmi(v tomto prípade bankou a klientom) a systémom. Taktiež znázorňuje funkcie, ktoré by mal systému vykonávať. Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy, v ktorej sa nachádza popis práce softvéru. Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.      
 \newline
 \begin{figure}[h]
 \centering
@@ -120,7 +120,8 @@ Diagram prípadov použitia je typ diagramu, ktorý zobrazuje vzťah medzi akté
 \newpage
 
 \subsection{Diagram tried} \label{class}
-V tejto podkapitole článok bližšie popíše obrátok ~\ref{dt}.
+Diagram tried je najpoužívanejší UML diagram. Zobrazuje triedy, ktoré bude softvér obsahovať a vzťahy medzi nimi. Diagram musí byť kompletný aby sa podľa neho dal napísať kód a preto triedy musia obsahovať všetky atribúty a metódy. Pod pojmom atribúty si môžeme predstaviť dáta s ktorými bude trieda pracovať. Metódy sú operácie, ktoré bude daná trieda vykonávať.
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{class.png}
@@ -128,8 +129,11 @@ V tejto podkapitole článok bližšie popíše obrátok ~\ref{dt}.
 \label{dt}
 \end{figure}
 
-
-\newpage
+Na obrázku~\ref{dt}  je ako prvá zobrazená trieda „BANK“. Atribúty,  ktoré bude obsahovať sú kód na jej identifikáciu a adresa.  Metódy,  ktoré banka používa na spoluprácu s bankomatom sú spravovanie a údržba. Znamienko plus pred názvami atribútov a metód znamená, že sú verejné. 
+\newline
+Ďalšou triedou v diagrame je „ATM “, čiže bankomat. Metódy tejto triedy deklarujú transakcie, ktoré vykonáva.  
+\newline
+Ako uvádza zdroj 1, každá banka potrebuje zákazníkov a preto v diagrame vytvárame triedu „CUSTOMER“. Tým treba priradiť meno a adresu. 
 
 \subsection{Sekvenčný diagram} \label{seq}
 V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
@@ -140,7 +144,7 @@ V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
 \label{sd}
 \end{figure}
 
-
+\newpage
 \section{Záver} \label{zaver} % prípadne iný variant názvu
 
 
