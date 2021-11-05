@@ -15,3 +15,10 @@
 	title = "1. diel - Úvod do UML",
 	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-uvod-historie-vyznam-a-diagramy}",
 }
+
+% zdroj na webe
+@misc{CLASS,
+	author = "Constantine Nalimov",
+	title = "Class diagram for an ATM system: step-by-step guide",
+	howpublished = "\url{https://www.gleek.io/blog/atm-system-class.html}",
+}
