@@ -132,10 +132,15 @@ Diagram tried je najpoužívanejší UML diagram. Zobrazuje triedy, ktoré bude 
 Na obrázku~\ref{dt}  je ako prvá zobrazená trieda „BANK“. Atribúty,  ktoré bude obsahovať sú kód na jej identifikáciu a adresa.  Metódy,  ktoré banka používa na spoluprácu s bankomatom sú spravovanie a údržba. Znamienko plus pred názvami atribútov a metód znamená, že sú verejné. 
 \newline
 Ďalšou triedou v diagrame je „ATM “, čiže bankomat. Metódy tejto triedy deklarujú transakcie, ktoré vykonáva.  
-\newline
-Ako uvádza článok \cite{CLASS}, každá banka potrebuje zákazníkov a preto v diagrame vytvárame triedu „CUSTOMER“. Tým treba priradiť meno a adresu. 
-\newline
-Týmto spôsobom popíšem aj zvyšok diagramu.
+
+Ako uvádza článok \cite{CLASS}, každá banka potrebuje klientov, a preto diagram obsahuje triedu „CUSTOMER“. Údaje, ktoré trieda potrebuje sú meno klienta a adresa. Klient nevykonáva žiadne operácie iba vlastní produkty banky.
+
+Zákazník môže vlastniť účet a debetnú kartu. Preto bude diagram obsahovať triedy „Account“ a „Debit card“. Účet má v atribútoch zapísaného vlastníka a typ účtu. Táto trieda môže vykonať kontrolu stavu na účte. Trieda pre debetnú kartu má v atribútoch zapísané číslo karty a vlastníka karty. Metóda karty je prístup, pretože umožňuje prístup k bankomatu a tým aj k účtu vlastníka. 
+
+Ďalšie triedy, ktoré musí diagram obsahovať popisujú transakcie vykonávané počas používania bankomatu. Trieda „ATMtransaction“ má tri atribúty – ID transakcie, dátum a typ transakcie. Jej jedinou metódou je aktualizácia. 
+
+V prípade diagramu ~\ref{dt}  sa predpokladá, že zákazník môže iba vybrať peniaze alebo peniaze previesť na iný účet. Preto obsahuje triedy „WithdrawalTransaction“ a „TransferTransaction“.  Tieto dve triedy sú podtriedami „ATMtransaction“ a preto môžu zdediť je metódy. Transakcia výberu potrebuje údaje o sume, ktorú chce klient vybrať. Potom metóda výber uskutoční vydanie hotovosti klientovi a zdedená metóda aktualizácie aktualizuje stav na účte. Transakcia prevedenia peňazí na druhý účet má iba dva atribúty. Sumu, ktorú chce klient postlať a číslo účtu, na ktorý má byť suma pripísaná. Trieda po schválení transakcie využije zdedenú funkciu aktualizácia, ktorá aktualizuje stav na účte.
+
 
 \subsection{Sekvenčný diagram} \label{seq}
 V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
