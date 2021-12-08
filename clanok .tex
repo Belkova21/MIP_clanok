@@ -32,12 +32,13 @@
 \maketitle
 
 \begin{abstract}
-\ Článok sa zaoberá modelom bankomatového softvéru.  Na začiatku stručne definuje čo je Unified Modeling Language, ktorý je na modelovanie použitý.  Následne pomocou vybraných diagramov demonštruje model softvéru pre bankomat.  Použité diagramy sú sekvenčný diagram, diagram tried a diagram prípadov použitia. 
+\ Článok sa zaoberá modelom bankomatového softvéru.  Na začiatku stručne definuje čo je Unified Modeling Language, ktorý je na modelovanie použitý.  Následne pomocou vybraných diagramov demonštruje model softvéru pre bankomat.  Použité diagramy sú sekvenčný diagram, diagram tried a diagram prípadov použitia. \newline
+ Kľúčové slová : bankomatový softvér, model softvéru
 
 \end{abstract}
 
 
-,
+
 
 \section{Úvod}
 
@@ -45,12 +46,12 @@ Bankomaty prešli za posledných 60 rokov veľkými zmenami. Z jednoduchých zar
 \newline
 Základné informácie o grafickom jazyku, ktorý je použitý na modelovanie,, ako aj popis jeho diagramov sú v časti ~\ref{uml}.Príklady vybraných UML diagramov pre bankomatový softvér a ich vysvetlenie článok ponúka v časti ~\ref{main}.  Záverečné poznatky a zhrnutie celého článku prináša časť ~\ref{zaver}.
 
-
-\section{Unified Modeling Language (UML)} \label{uml}
-(definícia UML je sformulovaná na základe článku \cite{UML-Uvod})\newline
-UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru. Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  
-
 \newpage
+\section{Unified Modeling Language (UML)} \label{uml}
+
+UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru. Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  \cite{UML-Uvod}
+\newline
+\newline
 \Large 
 \textbf{Typy diagramov}
 \normalsize
@@ -58,6 +59,119 @@ UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri v
 UML v súčasnosti pozostáva zo 14 diagramov. Tie sú rozdelené do dvoch základných kategórií:  diagramy štruktúry (Structure diagrams) a diagramy správania (Behaviour Diagram).
 \newline
 
+\begin{figure}[h]
+\textbf{Diagramy štruktúry }
+\begin{itemize}
+\item Diagram tried
+\item Schéma komponentov
+\item Objektový diagram
+\item Zložený štruktúrny diagram
+\item Schéma balenia
+\item Schéma nasadenia
+\item Profilový diagram
+\end{itemize}
+\end{figure}
+
+\begin{figure}[h]
+\textbf{Diagramy správania }
+\begin{itemize}
+\item Diagram aktivít
+\item Diagram prípadov použitia\
+\item Stavový diagram
+\item Komunikačný diagram
+\item Sekvenčný diagram
+\item Diagram prehľadu interakcií
+\item Synchronizačný diagram
+\end{itemize}
+\end{figure}
+
+V článku bude pre model bankomatového softvéru použitý diagram prípadov použitia,  diagram tried (obsahuje všetky triedy, ktoré bude softvér používať a vzťahy medzi nimi) a sekvenčný diagram (zobrazuje interakcie medzi zákazníkom, bankomatom a bankou).
+
+
+\newpage
+\section{Model bankomatového softvér} \label{main}
+
+\subsection{Diagram prípadov použitia } \label{use}
+
+Diagram prípadov použitia je väčšinou prvý diagram, ktorý sa pri návrhu systému vytvára. Je to z toho dôvodu, že diagram nerieši ako bude daný systém fungovať, ale čo bude systém vykonávať, teda čo od neho tvorca prípadne klient očakáva. Je zámerne jednoduchý, aby programátor predčasne neuviazol v problémoch s implementáciou systému. Jeho benefitom je, že zobrazuje systém tak, ako ho vidí používateľ a preto uľahčuje komunikáciu s klientom.  \cite{UML-PP}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{use case.png}
+\caption{Diagram prípadov použitia\cite{Sample}}
+\label{dpp}
+\end{figure}
+
+
+Diagram zobrazuje vzťah medzi aktérmi a systémom a funkcie modelovaného systému. 
+Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy,  v ktorej sa nachádza popis práce.  Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.  Komunikácia prebieha zľava doprava (pokiaľ nie je šípkou naznačený iný smer).
+\newline 
+\newline 
+Klient môže :   
+\begin{itemize}
+\item previezť peniaze
+\item vybrať peniaze
+\item skontrolovať stav na účte
+\item odhlásiť sa (pod odhlásením sa rozumieme ukončenie transakcie a vytiahnutie karty z bankomatu)
+\item vložiť peniaze
+\item prihlásiť sa (pod prihlásením sa rozumieme vloženie karty do bankomatu a zadanie správneho PIN kódu)
+\end{itemize}
+
+Prípady použitia pre prevod a výber peňazí majú na seba väzbou \textit{\textbf{include}} naviazanú funkcionalitu na kontrolu stavu účte. Táto väzba sa používa ak sa niektorá funkcionalita v rôznych častiach modelu opakuj. Taktiež sa môže použiť keď je nejaká funkcionalita natoľko dôležitá, že bude v diagrame osobitne zobrazená namiesto toho aby bola iba považovaná za súčasť nejakého prípadu použitia. \cite{UML-PP}
+\newline 
+
+Ďalším príznačným prvkom diagramu ~\ref{dpp}  je vzťah \textit{\textbf{extend}} medzi prípadmi použitia pre odhlásenie sa a vytlačenie potvrdenia. Zatiaľ čo väzba include naznačuje, že prípad použitia, z ktorého vychádza obsahuje funkcionalitu, na ktorú ukazuje, pri väzbe extend to neplatí.  Tento vzťah pôsobí opačne.  To znamená, že prípad použitia pre odhlásenie sa nepotrebuje k svojej činnosti prípad použitia, ktorý je k nemu naviazaný väzbou extend.  To však neplatí pre prípad použitia, z ktorého väzba vychádza. Ten nemôže fungovať bez toho aby bol vykonaný prípad použitia, na ktorý ukazuje.  \cite{EXTEND} 
+
+Z diagramu ~\ref{dpp} sa dá teda určiť, že odhlásenie sa vykoná bez ohľadu na to či sa vytlačí potvrdenie.  Avšak potvrdenie sa vytlačí iba v tom prípade, že sa používateľ odhlási. 
+\newline 
+
+Posledný špecifický vzťah v diagrame je vzťah  \textit{\textbf{zovšeobecnenia}}, ktorý reprezentuje hrana so šípkou. Označuje, že prípad použitia dedí funkcionalitu nadriadeného prípadu použitia. Šípka ukazuje na nadradený prvok. Diagram teda demonštruje prípad , kedy sa pri odhlasovaní vyberie prípad použitia buď pre kreditnú alebo debetnú kartu a tie zdedia všetky metódy a funkcie pre odhlásenie.
+\newline 
+
+Druhým aktérom v diagrame~\ref{dpp} je banka.  Je to z toho dôvodu, že pri vykonávaní akéhokoľvek prípadu použitia musí bankomat komunikovať s bankovou inštitúciou, ktorá mu poskytuje všetky potrebné dáta o klientovi.  Po uskutočnení operácie taktiež dáta aktualizuje a odovzdá banke. 
+\newline
+
+\subsection{Diagram tried} \label{class}
+Diagram tried je najpoužívanejší UML diagram. Zobrazuje triedy, ktoré bude softvér obsahovať a vzťahy medzi nimi. Diagram musí byť kompletný aby sa podľa neho dal napísať kód a preto musia triedy obsahovať všetky atribúty a metódy. Pod pojmom atribúty si môžeme predstaviť dáta, s ktorými bude trieda pracovať. Metódy sú operácie, ktoré bude daná trieda vykonávať.
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{class.png}
+\caption{Diagram tried\cite{Sample}}
+\label{dt}
+\end{figure}
+
+
+Na obrázku~\ref{dt}  je ako prvá zobrazená trieda \textit{\textbf{Bank}}. Atribúty,  ktoré bude obsahovať sú kód na jej identifikáciu a adresa.  Metódy,  ktoré banka používa na spoluprácu s bankomatom sú spravovanie a údržba. Znamienko plus pred názvami atribútov a metód znamená, že sú verejné. 
+\newline
+
+Ďalšou triedou v diagrame je \textit{\textbf{ATM}}, čiže bankomat.  Metódy tejto triedy deklarujú transakcie,  ktoré vykonáva.  
+\newline
+
+Ako uvádza článok \cite{CLASS}, každá banka potrebuje klientov, a preto diagram obsahuje triedu \textit{\textbf{Customer}}. Údaje, ktoré trieda potrebuje sú meno klienta a adresa. Klient nevykonáva žiadne operácie iba vlastní produkty banky.
+\newline
+
+Klient môže vlastniť účet a debetnú kartu. Preto bude diagram obsahovať triedy \textit{\textbf{Account}}  a \textit{\textbf{Debit card}}.  Účet má v atribútoch zapísaného vlastníka a typ účtu. Táto trieda môže vykonať kontrolu stavu na účte. Trieda pre debetnú kartu má v atribútoch zapísané číslo karty a vlastníka karty.  Metóda karty je "prístup", pretože umožňuje prístup k bankomatu a tým aj k účtu vlastníka. 
+\newline
+
+Ďalšie triedy, ktoré musí diagram obsahovať popisujú transakcie vykonávané počas používania bankomatu. Trieda\textit{\textbf{ATMtransaction}} má tri atribúty – ID transakcie, dátum a typ transakcie. Jej jedinou metódou je aktualizácia. 
+\newline
+
+V prípade diagramu ~\ref{dt}  sa predpokladá, že zákazník môže iba vybrať peniaze alebo peniaze previesť na iný účet. Preto obsahuje triedy \textit{\textbf{WithdrawalTransaction}} a \textit{\textbf{TransferTransaction}}.  Tieto dve triedy sú podtriedami \textit{\textbf{ATMtransaction}}  a preto môžu zdediť jej metódy. Transakcia výberu potrebuje údaje o sume, ktorú chce klient vybrať. Potom metóda výber uskutoční vydanie hotovosti klientovi a zdedená metóda aktualizácie aktualizuje stav na účte. Transakcia prevedenia peňazí na druhý účet má iba dva atribúty.  Sumu, ktorú chce klient poslať a číslo účtu, na ktorý má byť suma pripísaná. Trieda po schválení transakcie využije zdedenú funkciu aktualizácia, ktorá aktualizuje stav na účte.\cite{CLASS}
+\newline
+
+\subsection{Sekvenčný diagram} \label{seq}
+V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{seq.png}
+\caption{Sekvenčný diagram\cite{Sample}}
+\label{sd}
+\end{figure}
+
+
+\section{Záver} \label{zaver} % prípadne iný variant názvu
 \hfil\
 \begin{tabular}{|l|}
 \hline
@@ -101,59 +215,6 @@ Synchronizačný diagram\\
 \hfil
 \newline
 \newline
-V článku bude pre model bankomatového softvéru použitý sekvenčný diagram (zobrazuje interakcie medzi zákazníkom, bankomatom a bankou), diagram tried (obsahuje všetky triedy, ktoré bude softvér používať a vzťahy medzi nimi), a diagram prípadov použitia. 
-
-\section{Model bankomatového softvér} \label{main}
-
-\subsection{Diagram prípadov použitia } \label{use}
-
-Diagram prípadov použitia je typ diagramu, ktorý zobrazuje vzťah medzi aktérmi(v tomto prípade bankou a klientom) a systémom. Taktiež znázorňuje funkcie, ktoré by mal systému vykonávať. Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy, v ktorej sa nachádza popis práce softvéru. Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.      
-\newline
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.3]{use.png}
-\caption{Diagram prípadov použitia\cite{Sample}}
-\label{dpp}
-\end{figure}
-
-
-\newpage
-
-\subsection{Diagram tried} \label{class}
-Diagram tried je najpoužívanejší UML diagram. Zobrazuje triedy, ktoré bude softvér obsahovať a vzťahy medzi nimi. Diagram musí byť kompletný aby sa podľa neho dal napísať kód a preto musia triedy obsahovať všetky atribúty a metódy. Pod pojmom atribúty si môžeme predstaviť dáta, s ktorými bude trieda pracovať. Metódy sú operácie, ktoré bude daná trieda vykonávať.
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.3]{class.png}
-\caption{Diagram tried\cite{Sample}}
-\label{dt}
-\end{figure}
-
-Na obrázku~\ref{dt}  je ako prvá zobrazená trieda "BANK“. Atribúty,  ktoré bude obsahovať sú kód na jej identifikáciu a adresa.  Metódy,  ktoré banka používa na spoluprácu s bankomatom sú spravovanie a údržba. Znamienko plus pred názvami atribútov a metód znamená, že sú verejné. 
-\newline
-Ďalšou triedou v diagrame je "ATM “, čiže bankomat. Metódy tejto triedy deklarujú transakcie, ktoré vykonáva.  
-
-Ako uvádza článok \cite{CLASS}, každá banka potrebuje klientov, a preto diagram obsahuje triedu "CUSTOMER“. Údaje, ktoré trieda potrebuje sú meno klienta a adresa. Klient nevykonáva žiadne operácie iba vlastní produkty banky.
-
-Klient môže vlastniť účet a debetnú kartu. Preto bude diagram obsahovať triedy "Account“ a "Debit card“. Účet má v atribútoch zapísaného vlastníka a typ účtu. Táto trieda môže vykonať kontrolu stavu na účte. Trieda pre debetnú kartu má v atribútoch zapísané číslo karty a vlastníka karty. Metóda karty je "prístup", pretože umožňuje prístup k bankomatu a tým aj k účtu vlastníka. 
-
-Ďalšie triedy, ktoré musí diagram obsahovať popisujú transakcie vykonávané počas používania bankomatu. Trieda "ATMtransaction“ má tri atribúty – ID transakcie, dátum a typ transakcie. Jej jedinou metódou je aktualizácia. 
-
-V prípade diagramu ~\ref{dt}  sa predpokladá, že zákazník môže iba vybrať peniaze alebo peniaze previesť na iný účet. Preto obsahuje triedy "WithdrawalTransaction“ a "TransferTransaction“.  Tieto dve triedy sú podtriedami „ATMtransaction“ a preto môžu zdediť jej metódy. Transakcia výberu potrebuje údaje o sume, ktorú chce klient vybrať. Potom metóda výber uskutoční vydanie hotovosti klientovi a zdedená metóda aktualizácie aktualizuje stav na účte. Transakcia prevedenia peňazí na druhý účet má iba dva atribúty. Sumu, ktorú chce klient poslať a číslo účtu, na ktorý má byť suma pripísaná. Trieda po schválení transakcie využije zdedenú funkciu aktualizácia, ktorá aktualizuje stav na účte.
-
-
-\subsection{Sekvenčný diagram} \label{seq}
-V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.3]{seq.png}
-\caption{Sekvenčný diagram\cite{Sample}}
-\label{sd}
-\end{figure}
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
-
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}

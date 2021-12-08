@@ -22,3 +22,17 @@
 	title = "Class diagram for an ATM system: step-by-step guide",
 	howpublished = "\url{https://www.gleek.io/blog/atm-system-class.html}",
 }
+
+% zdroj na webe
+@misc{UML-PP,
+	author = "David Čápka",
+	title = "2. diel - UML - Use Case Diagram",
+	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-use-case-diagram}",
+}
+
+% zdroj na webe
+@misc{EXTEND,
+	author = " RNDr. Ilja Kraval",
+	title = "Kdy použít v Use Case Diagramu vztah Extend a kdy Include (část 1)",
+	howpublished = "\url{https://www.objects.cz/wp/is_uml/kdy-pouzit-v-use-case-diagramu-vztah-extend-a-kdy-include/}",
+}
