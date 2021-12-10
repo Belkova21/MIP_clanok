@@ -125,7 +125,7 @@ Prípady použitia pre prevod a výber peňazí majú na seba väzbou \textit{\t
 Z diagramu ~\ref{dpp} sa dá teda určiť, že odhlásenie sa vykoná bez ohľadu na to či sa vytlačí potvrdenie.  Avšak potvrdenie sa vytlačí iba v tom prípade, že sa používateľ odhlási. 
 \newline 
 
-Posledný špecifický vzťah v diagrame je vzťah  \textit{\textbf{zovšeobecnenia}}, ktorý reprezentuje hrana so šípkou. Označuje, že prípad použitia dedí funkcionalitu nadriadeného prípadu použitia. Šípka ukazuje na nadradený prvok. Diagram teda demonštruje prípad , kedy sa pri odhlasovaní vyberie prípad použitia buď pre kreditnú alebo debetnú kartu a tie zdedia všetky metódy a funkcie pre odhlásenie.
+Posledný špecifický vzťah v diagrame je vzťah  \textit{\textbf{zovšeobecnenia}}, ktorý reprezentuje hrana so šípkou. Označuje, že prípad použitia dedí funkcionalitu nadriadeného prípadu použitia. Šípka ukazuje na nadradený prvok. Diagram teda demonštruje prípad , kedy sa pri odhlasovaní vyberie prípad použitia buď pre kreditnú alebo debetnú kartu a tie zdedia všetky metódy a funkcie pre odhlásenie.\cite{UML-PP}
 \newline 
 
 Druhým aktérom v diagrame~\ref{dpp} je banka.  Je to z toho dôvodu, že pri vykonávaní akéhokoľvek prípadu použitia musí bankomat komunikovať s bankovou inštitúciou, ktorá mu poskytuje všetky potrebné dáta o klientovi.  Po uskutočnení operácie taktiež dáta aktualizuje a odovzdá banke. 
@@ -162,14 +162,38 @@ V prípade diagramu ~\ref{dt}  sa predpokladá, že zákazník môže iba vybra�
 \newline
 
 \subsection{Sekvenčný diagram} \label{seq}
-V tejto podkapitole článok bližšie popíše obrátok ~\ref{sd}.
+Posledný diagram, ktorému sa bude článok venovať je sekvenčný diagram. Na základe diagramu tried už vieme aké triedy bude softvér obsahovať a aj aké vzťahy budú medzi nimi. Sekvenčný diagram teraz popíše chronologickú komunikáciu medzi týmito triedami a objektami v čase. Diagram teda zobrazuje ako, a v akom poradí skupina objektov spolupracuje. V sekvenčnom diagrame nie sú kľúčové len kroky aktivity, ale aj vzájomné vzťahy medzi triedami a objektami, ktoré v ňom figurujú. \cite{UML-SD}
+\newline
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{seq.png}
+\includegraphics[scale=0.4]{sekvencny.png}
 \caption{Sekvenčný diagram\cite{Sample}}
 \label{sd}
 \end{figure}
+\newpage
 
+Diagram ~\ref{sd} simuluje výber hotovosti z bankomatu. V hornej časti diagramu sa nachádzajú symboly objektov (obdĺžniky), ktoré reprezentujú aktérov. V tomto prípade budú v diagrame figurovať Klient, Bankomat a Databáza (súčasť bankovej inštitúcie, ktorá poskytuje bankomatu údaje o klientovi). Vertikálne prerušované čiary predstavujú plynutie času. Začínajú tvarom obdĺžnika alebo postavou herca. \cite{SD}
+\newline
+
+Klient najskôr vloží platobnú kartu do bankomatu. Kor znázorňuje prvá interakcia na diagrame. Interakcie je znázornená plnou šípkou s plnou čiarou. Tento symbol sa používa keď odosielateľ musí čakať na odpoveď. 
+Následne musí bankomat overiť, či je číslo karty platné, a preto pošle kvôli overeniu správu do databázy. Pri databáze sa vytvorí aktivačná lišta, ktorá ukáže, že databáza je počas tohto obdobia aktívna. Po overení pošle bankomatu správu ,že je karta v poriadku. Táto správa bude odoslaná späť na konci aktivačnej lišty\cite{SD}
+\newline
+
+Teraz bankomat požiada používateľa aby zadal svoj PIN kód. Po zadaní kódu musí bankomat opäť skontrolovať databázu a overiť, či je kód správny. Tá následne PIN kód overí a pošle bankomatu správu. Pri overovaní údajov v databáze bude na diagrame opäť znázornená aktivačná lišta. Keď je všetko v poriadku bankomat ponúkne klientovi ponuku možností. 
+\newline
+
+V tomto bode prebieha výmena interakcií medzi klientom a bankomatom. Klient si z ponúknutých možností zvolí možnosť výberu hotovosti, bankomat sa spýta na čiastku a klient zadá čiastku, ktorú chce vybrať. Počas celej interakcie je pri klientovi znázornená aktivačná lišta.  
+\newline
+
+Ako pri predošlých interakciách aj teraz musí bankomat poslať správu do databázy a overiť, či má klient na účte dostatok prostriedkov. Teraz však diagram zobrazí oba prípady odpovede. Aby bolo z diagramu zreteľne jasné, aké interakcie budú v oboch prípade prebiehať, sú znázornené oddelene. Pre oddelenie viacerých možností odpovede sa v sekvenčnom diagrame používajú slučky (prázdne obdĺžniky, ktoré majú v pravom hornom rohu štítok pre text). V prípade diagramu ~\ref{sd} je v štítku text alt = alternatíva.  \cite{SD}
+\newline
+
+Ak má klient na účte dostatok prostriedkov bankomat vydá hotovosť, klient si ju vezme a bankomat mu nakoniec vráti platobnú kartu (v niektorých prípadoch bankomatom vracia kartu pred vydaním hotovosti, takže interakcie v tejto časti budú na diagrame vymenené).
+\newline
+
+V opačnom prípade databáza pošle bankomatu správu o tom, že klient nemá na účte dostatok prostriedkov. Bankomat následne zobrazí klientovi správu o zamietnutí transakcie a vráti mu platobnú kartu. 
+\newline
 
 \section{Záver} \label{zaver} % prípadne iný variant názvu
 

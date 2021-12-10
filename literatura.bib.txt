@@ -24,6 +24,13 @@
 }
 
 % zdroj na webe
+@misc{SD,
+	author = "Constantine Nalimov",
+	title = "Sequence diagram for ATM withdrawal: a step-by-step guide",
+	howpublished = "\url{https://www.gleek.io/blog/atm-sequence-diagram.html}",
+}
+
+% zdroj na webe
 @misc{UML-PP,
 	author = "David Čápka",
 	title = "2. diel - UML - Use Case Diagram",
@@ -35,4 +42,11 @@
 	author = " RNDr. Ilja Kraval",
 	title = "Kdy použít v Use Case Diagramu vztah Extend a kdy Include (část 1)",
 	howpublished = "\url{https://www.objects.cz/wp/is_uml/kdy-pouzit-v-use-case-diagramu-vztah-extend-a-kdy-include/}",
+}
+
+% zdroj na webe
+@misc{UML-SD,
+	author = "David Čápka",
+	title = "10. diel - UML - Sequence diagram",
+	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-sequence-diagram}",
 }
