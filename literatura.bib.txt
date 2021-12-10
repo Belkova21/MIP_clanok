@@ -31,6 +31,13 @@
 }
 
 % zdroj na webe
+@misc{UML-CD,
+	author = "David Čápka",
+	title = "5. diel - UML - Class diagram",
+	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-class-diagram-triedny-model}",
+}
+
+% zdroj na webe
 @misc{UML-PP,
 	author = "David Čápka",
 	title = "2. diel - UML - Use Case Diagram",
