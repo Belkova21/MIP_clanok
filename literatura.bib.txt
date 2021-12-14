@@ -57,3 +57,10 @@
 	title = "10. diel - UML - Sequence diagram",
 	howpublished = "\url{https://www.itnetwork.sk/navrh/uml/uml-sequence-diagram}",
 }
+
+% zdroj na webe
+@misc{tab,
+	author = "Warren Lynch",
+	title = "A Comprehensive Guide to 14 Types of UML Diagram",
+	howpublished = "\url{https://warren2lynch.medium.com/a-comprehensive-guide-to-14-types-of-uml-diagram-affcc688377e}",
+}

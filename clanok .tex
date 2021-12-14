@@ -46,49 +46,93 @@ Bankomaty prešli za posledných 60 rokov veľkými zmenami. Z jednoduchých zar
 \newline
 Základné informácie o grafickom jazyku, ktorý je použitý na modelovanie,, ako aj popis jeho diagramov sú v časti ~\ref{uml}.Príklady vybraných UML diagramov pre bankomatový softvér a ich vysvetlenie článok ponúka v časti ~\ref{main}.  Záverečné poznatky a zhrnutie celého článku prináša časť ~\ref{zaver}.
 
-\newpage
+
 \section{Unified Modeling Language (UML)} \label{uml}
 
-UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru. Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  \cite{UML-Uvod}
+UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri vývoji softvéru.  Vo fáze analýzy pomáha odhadnúť cenu systému a taktiež uľahčuje komunikáciu s klientom, keďže diagramy sú jednoduché na pochopenie. Vďaka UML je jednoduchšie reagovať na zmeny v zadaní klienta. Vo fáze návrhu pomáha riešiť otázku ako bude softvér naprogramovaný.  \cite{UML-Uvod}
 \newline
-\newline
+\newpage
 \Large 
 \textbf{Typy diagramov}
 \normalsize
 \newline
+
 UML v súčasnosti pozostáva zo 14 diagramov. Tie sú rozdelené do dvoch základných kategórií:  diagramy štruktúry (Structure diagrams) a diagramy správania (Behaviour Diagram).
 \newline
 
-\begin{figure}[h]
-\textbf{Diagramy štruktúry }
-\begin{itemize}
-\item Diagram tried
-\item Schéma komponentov
-\item Objektový diagram
-\item Zložený štruktúrny diagram
-\item Schéma balenia
-\item Schéma nasadenia
-\item Profilový diagram
-\end{itemize}
-\end{figure}
+\hfil\
+\begin{tabular}{l}
+\textbf{Diagramy štruktúry:} \\
+Diagram tried\\
+Schéma komponentov\\
+Objektový diagram\\
+Zložený štruktúrny diagram\\
+Schéma balenia\\
+Schéma nasadenia\\
+Profilový diagram\\
+\end{tabular}
+\hfil \
+\begin{tabular}{l}
+\textbf{Diagramy správania:} \\
+Diagram aktivít\\
+Diagram prípadov použitia\\
+Stavový diagram\\
+Komunikačný diagram\\
+Sekvenčný diagram\\
+Diagram interakcií\\
+Diagram časovania\\
+\end{tabular}
+\hfil
+\newline
+\newline
 
-\begin{figure}[h]
-\textbf{Diagramy správania }
-\begin{itemize}
-\item Diagram aktivít
-\item Diagram prípadov použitia\
-\item Stavový diagram
-\item Komunikačný diagram
-\item Sekvenčný diagram
-\item Diagram prehľadu interakcií
-\item Synchronizačný diagram
-\end{itemize}
-\end{figure}
+V tubule \ref{tabulka} sú diagramy zoradené podľa popularity. V pravom stĺpci je zapísané, koľko percent zo všetkých softvérov zapojených do prieskumu použilo pri modelovaní daný diagram. Diagram je široko používaný ak má 60 percent a viac. Naopak ak má diagram 40 percent a menej, nepoužíva sa takmer vôbec.  V článku bude pre model bankomatového softvéru použitý diagram prípadov použitia(zobrazuje čo všetko by mal vytváraný systém obsahovať a vykonávať), diagram tried (obsahuje všetky triedy, ktoré bude softvér obsahovať a vzťahy medzi nimi) a sekvenčný diagram (zobrazuje interakcie medzi zákazníkom, bankomatom a bankou v časovom slede ako sa vykonávajú za sebou). 
+\newline
 
-V článku bude pre model bankomatového softvéru použitý diagram prípadov použitia,  diagram tried (obsahuje všetky triedy, ktoré bude softvér používať a vzťahy medzi nimi) a sekvenčný diagram (zobrazuje interakcie medzi zákazníkom, bankomatom a bankou).
-
-
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Priecka} & \textbf{Diagram} & \textbf{Percentil}  \\
+\hline
+1 & Diagram tried & 100 \\
+\hline
+2 & Diagram aktivít & 98\\
+\hline
+3 & Sekvenčný diagram & 97\\ 
+\hline
+4 & Diagram prípadov použitia & 96\\
+\hline
+5 & Stavový diagram & 96\\
+\hline
+6 & Komunikačný diagram & 82\\
+\hline
+7 & Schéma komponentov & 80\\
+\hline
+8 & Schéma nasadenia & 80\\
+\hline
+9 & Objektový diagram & 71\\
+\hline
+10 & Schéma balenia & 70 \\
+\hline
+11 &  Zložený štruktúrny diagram & 52\\
+\hline
+12 & Diagram časovania & 40 \\
+\hline
+13 & Diagram interakcií & 39\\
+\hline
+14 &  Profilový diagram & 11\\
+\hline
+\end{tabular}
+\caption{\label{tabulka}Popularita ULM diagramov\cite{tab}}
+\end{table}
 \newpage
+
+\paragraph{Historické súvislosti.}
+Približne do 70. rokov 20. storočia bol vývoj softvéru považovaný za čisto umelecký počin. Systémy sa však časom stávali zložitejšie, takže modelovanie a vývoj softvéru už nebolo možné realizovať týmto kreatívnym spôsobom. Vývojárska komunita potrebovala stabilný a spoločný dizajnový jazyk, ktorý by sa dal na vývoj a modelovanie použiť. Ten pod názvom Unified Modeling Language  v roku 1997 vydala spoločnosť Object Management Group. UML prinieslo jednotný štandardný modelovací zápis, vďaka ktorému môžu teraz IT profesionáli čítať a šíriť systémové plány dizajnu. 
+
+
+
 \section{Model bankomatového softvér} \label{main}
 
 \subsection{Diagram prípadov použitia } \label{use}
@@ -106,7 +150,7 @@ Diagram prípadov použitia je väčšinou prvý diagram, ktorý sa pri návrhu 
 Diagram zobrazuje vzťah medzi aktérmi a systémom a funkcie modelovaného systému. 
 Na obrázku ~\ref{dpp} sú prípady použitia znázornené pomocou elipsy,  v ktorej sa nachádza popis práce.  Čiary spájajúce aktérov a prípady použitia predstavujú interakcie medzi nimi.  Komunikácia prebieha zľava doprava (pokiaľ nie je šípkou naznačený iný smer).
 \newline 
-\newline 
+\newpage
 Klient môže :   
 \begin{itemize}
 \item previezť peniaze
@@ -129,11 +173,13 @@ Posledný špecifický vzťah v diagrame je vzťah  \textit{\textbf{zovšeobecne
 \newline 
 
 Druhým aktérom v diagrame~\ref{dpp} je banka.  Je to z toho dôvodu, že pri vykonávaní akéhokoľvek prípadu použitia musí bankomat komunikovať s bankovou inštitúciou, ktorá mu poskytuje všetky potrebné dáta o klientovi.  Po uskutočnení operácie taktiež dáta aktualizuje a odovzdá banke. 
-\newline
+\paragraph{Technológia a ľudia.}
+Modelovanie a vývoj softvéru je zložitý proces. Obzvlášť keď sa jedná o bankomatový softvér, ktorý pracuje s osobnými údajmi a peniazmi. S narastajúcimi nárokmi a požiadavkami na softvér sa zvyšuje aj počet ľudí potrebných na jeho tvorbu. Práca vo veľkom tíme však nie je vždy ideálna. 
+Z tohto dôvodu sa začali vyvíjať metodiky, ktoré prácu v tímoch uľahčujú. Jednou z nich je aj Agile Scrum. Vďaka nemu dokáže tím dodať funkčný produkt v krátkych cykloch a zaručiť rýchlu spätnú väzbu. Podstatou Scrumu sú 1-4 týždňové šprinty, počas ktorých menšie tímy pracujú na najprioritnejších úlohách až kým nie je produkt dokončený. 
+
 
 \subsection{Diagram tried} \label{class}
 Diagram tried je najpoužívanejší UML diagram. Zobrazuje triedy, ktoré bude softvér obsahovať a vzťahy medzi nimi. Diagram musí byť kompletný aby sa podľa neho dal napísať kód a preto musia triedy obsahovať všetky atribúty a metódy. Pod pojmom atribúty si môžeme predstaviť dáta, s ktorými bude trieda pracovať. Metódy sú operácie, ktoré bude daná trieda vykonávať.\cite{UML-CD}
-\newpage
 
 \begin{figure}[h]
 \centering
@@ -195,8 +241,7 @@ Ak má klient na účte dostatok prostriedkov bankomat vydá hotovosť, klient s
 V opačnom prípade databáza pošle bankomatu správu o tom, že klient nemá na účte dostatok prostriedkov. Bankomat následne zobrazí klientovi správu o zamietnutí transakcie a vráti mu platobnú kartu. 
 \newline
 
-\section{Záver} \label{zaver} % prípadne iný variant názvu
-
+\section{Záver} \label{zaver} 
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
