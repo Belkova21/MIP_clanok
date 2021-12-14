@@ -57,7 +57,7 @@ UML je grafický jazyk, ktorý je štandardom v oblasti analýzy a návrhu pri v
 \normalsize
 \newline
 
-UML v súčasnosti pozostáva zo 14 diagramov. Tie sú rozdelené do dvoch základných kategórií:  diagramy štruktúry (Structure diagrams) a diagramy správania (Behaviour Diagram).
+UML pozostáva zo 14 diagramov. Tie sú rozdelené do dvoch základných kategórií:  diagramy štruktúry (Structure diagrams) a diagramy správania (Behaviour Diagram).
 \newline
 
 \hfil\
@@ -91,6 +91,7 @@ V tubule \ref{tabulka} sú diagramy zoradené podľa popularity. V pravom stĺpc
 
 \begin{table}[ht]
 \centering
+\caption{\label{tabulka}Popularita ULM diagramov\cite{tab}}
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{Priecka} & \textbf{Diagram} & \textbf{Percentil}  \\
@@ -124,12 +125,11 @@ V tubule \ref{tabulka} sú diagramy zoradené podľa popularity. V pravom stĺpc
 14 &  Profilový diagram & 11\\
 \hline
 \end{tabular}
-\caption{\label{tabulka}Popularita ULM diagramov\cite{tab}}
 \end{table}
 \newpage
 
 \paragraph{Historické súvislosti.}
-Približne do 70. rokov 20. storočia bol vývoj softvéru považovaný za čisto umelecký počin. Systémy sa však časom stávali zložitejšie, takže modelovanie a vývoj softvéru už nebolo možné realizovať týmto kreatívnym spôsobom. Vývojárska komunita potrebovala stabilný a spoločný dizajnový jazyk, ktorý by sa dal na vývoj a modelovanie použiť. Ten pod názvom Unified Modeling Language  v roku 1997 vydala spoločnosť Object Management Group. UML prinieslo jednotný štandardný modelovací zápis, vďaka ktorému môžu teraz IT profesionáli čítať a šíriť systémové plány dizajnu. \cite{historia}
+Približne do 70-tych rokov 20. storočia bol vývoj softvéru považovaný za čisto umelecký počin. Systémy sa však časom stávali zložitejšie, takže modelovanie a vývoj softvéru už nebolo možné realizovať kreatívnym spôsobom. Vývojárska komunita potrebovala stabilný a spoločný dizajnový jazyk, ktorý by sa dal na vývoj a modelovanie použiť. Ten pod názvom Unified Modeling Language  v roku 1997 vydala spoločnosť Object Management Group. UML prinieslo jednotný štandardný modelovací zápis, vďaka ktorému môžu teraz IT profesionáli čítať a šíriť systémové plány dizajnu.  \cite{historia}
 
 
 
@@ -173,9 +173,11 @@ Posledný špecifický vzťah v diagrame je vzťah  \textit{\textbf{zovšeobecne
 \newline 
 
 Druhým aktérom v diagrame~\ref{dpp} je banka.  Je to z toho dôvodu, že pri vykonávaní akéhokoľvek prípadu použitia musí bankomat komunikovať s bankovou inštitúciou, ktorá mu poskytuje všetky potrebné dáta o klientovi.  Po uskutočnení operácie taktiež dáta aktualizuje a odovzdá banke. 
+
 \paragraph{Technológia a ľudia.}
-Modelovanie a vývoj softvéru je zložitý proces. Obzvlášť keď sa jedná o bankomatový softvér, ktorý pracuje s osobnými údajmi a peniazmi. S narastajúcimi nárokmi a požiadavkami na softvér sa zvyšuje aj počet ľudí potrebných na jeho tvorbu. Práca vo veľkom tíme však nie je vždy ideálna. 
+Modelovanie a vývoj softvéru je zložitý proces. Obzvlášť keď sa jedná o bankomatový softvér, ktorý pracuje s osobnými údajmi a peniazmi. S narastajúcimi nárokmi a požiadavkami na softvér sa zvyšuje aj požiadavka na vyšší počet kvalifikovaných vývojárov potrebných na jeho tvorbu. Práca vo veľkom tíme však nie je vždy ideálna. 
 Z tohto dôvodu sa začali vyvíjať metodiky, ktoré prácu v tímoch uľahčujú. Jednou z nich je aj Agile Scrum. Vďaka nemu dokáže tím dodať funkčný produkt v krátkych cykloch a zaručiť rýchlu spätnú väzbu. Podstatou Scrumu sú 1-4 týždňové šprinty, počas ktorých menšie tímy pracujú na najprioritnejších úlohách až kým nie je produkt dokončený. 
+
 
 
 \subsection{Diagram tried} \label{class}
@@ -206,6 +208,11 @@ Klient môže vlastniť účet a debetnú kartu. Preto bude diagram obsahovať t
 
 V prípade diagramu ~\ref{dt}  sa predpokladá, že zákazník môže iba vybrať peniaze alebo peniaze previesť na iný účet. Preto obsahuje triedy \textit{\textbf{WithdrawalTransaction}} a \textit{\textbf{TransferTransaction}}.  Tieto dve triedy sú podtriedami \textit{\textbf{ATMtransaction}}  a preto môžu zdediť jej metódy. Transakcia výberu potrebuje údaje o sume, ktorú chce klient vybrať. Potom metóda výber uskutoční vydanie hotovosti klientovi a zdedená metóda aktualizácie aktualizuje stav na účte. Transakcia prevedenia peňazí na druhý účet má iba dva atribúty.  Sumu, ktorú chce klient poslať a číslo účtu, na ktorý má byť suma pripísaná. Trieda po schválení transakcie využije zdedenú funkciu aktualizácia, ktorá aktualizuje stav na účte.\cite{CLASS}
 \newline
+\paragraph{Udržateľnosť a etika.}
+Aby softvér dokázal napredovať a odolávať neustále narastajúcim nástrahám hackerských útokov, je nevyhnutné softvér pravidelne aktualizovať a udržiavať. Okrem opätovného použitia častí kódu sa pri udržateľnosti hovorí aj o nižšej spotrebe zariadenia či používaní ľahšie recyklovateľných materiálov. 
+Vývojári sa často ocitajú v situáciách kedy sa budú musieť rozhodovať na základe etiky. V tom nám môžu pomôcť rôzne etické kódexy ako je napríklad Software Engineering Code of Ethics - IEEE-CS a ACM 
+
+
 
 \subsection{Sekvenčný diagram} \label{seq}
 Posledný diagram, ktorému sa bude článok venovať je sekvenčný diagram. Na základe diagramu tried už vieme aké triedy bude softvér obsahovať a aj aké vzťahy budú medzi nimi. Sekvenčný diagram teraz popíše chronologickú komunikáciu medzi týmito triedami a objektami v čase. Diagram teda zobrazuje ako, a v akom poradí skupina objektov spolupracuje. V sekvenčnom diagrame nie sú kľúčové len kroky aktivity, ale aj vzájomné vzťahy medzi triedami a objektami, ktoré v ňom figurujú. \cite{UML-SD}
@@ -243,6 +250,7 @@ V opačnom prípade databáza pošle bankomatu správu o tom, že klient nemá n
 
 \section{Záver} \label{zaver} 
 
+Pri tvorbe zložitých softvérov sa môže stať, že sa počas vývoja zmenia požiadavky klienta alebo sa vplyvom nečakaných okolností softvérový projekt predraží či prestane mať jasný zámer. Aby bol softvérový projekt úspešný, je potrebné pred samotnou realizáciou pripraviť jasný a prepracovaný model. O to viac keď sa jedná o softvér denného použitia, ktorý pracuje s osobnými údajmi a peniazmi. Článok demonštroval model pre bankomatový softvér pomocou troch UML diagramov. Je to dobrý začiatok, ale pre vytvorenie kvalitného modelu to určite nestačí. Dobrými pomocníkmi pri modelovaní softvéru sú aj diagram aktivity a stavový diagram. Súčasťou dobrého plánu sú aj jasne stanovené požiadavky na systém a rozpočet. 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
 
